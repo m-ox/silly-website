@@ -1,0 +1,59 @@
+.content {
+    // height: 100vh;
+    background-color: lightsalmon;
+}
+
+.header {
+    background-color: pink;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-container {
+    background-color: lightgreen;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .navbar {
+        align-items: center;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        justify-items: center;
+    
+        &__navlink {
+            
+        }
+    }
+}
+
+.main {
+    min-height: calc(100vh - 400px);
+}
+
+.home {
+    background-color: lightblue;
+    &__main-content {
+        background-color: pink;
+    }
+}
+
+.about {
+    background-color: lightgray;
+}
+
+.not-found {
+    background-color: lightseagreen
+}
+
+.footer {
+    background-color: lightgoldenrodyellow;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

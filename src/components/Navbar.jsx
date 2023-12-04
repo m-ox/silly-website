@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import useSound from 'use-sound';
 import clickSfx from '../assets/sounds/selection.wav'
 
 function Navbar({currentPage, setPage}) {

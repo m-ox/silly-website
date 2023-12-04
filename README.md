@@ -1,3 +1,7 @@
+# What is this?
+
+This is simple boilerplate project using react-router-dom v6.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

@@ -1,10 +1,25 @@
+$primary: #737955;
+$primary-light: #C8C6B1;
+$secondary: #53242C;
+$secondary-light: #B2393E;
+$secondary-lighter: #CF514A;
+
+$black: #160101;
+$white: #f8efef;
+
+$hover-text: #fff7b7;
+$active-text: #e48686;
+
 .content {
     // height: 100vh;
-    background-color: lightsalmon;
+    background-color: $secondary-lighter;
 }
 
 .header {
-    background-color: pink;
+    font-family: 'Rubik Bubbles', sans-serif;
+    color: $white;
+    font-size: 4rem;
+    background-color: $secondary-light;
     height: 200px;
     display: flex;
     align-items: center;
@@ -12,11 +27,15 @@
 }
 
 .navbar-container {
-    background-color: lightgreen;
+    color: $white;
+    background-color: $secondary-lighter;
+    font-family: 'Dhurjati', sans-serif;
+    font-size: 2rem;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+
     .navbar {
         align-items: center;
         justify-content: center;
@@ -26,34 +45,78 @@
         justify-items: center;
     
         &__navlink {
-            
+            color: $white;
+            text-transform: none;
+            transition: 200ms;
+
+            &:hover {
+                color: $hover-text;
+            }
+
+            &:active {
+                color: $active-text;
+            }
         }
     }
 }
 
 .main {
     min-height: calc(100vh - 400px);
+    background-color: $white;
 }
 
 .home {
-    background-color: lightblue;
     &__main-content {
-        background-color: pink;
     }
 }
 
 .about {
-    background-color: lightgray;
+    display: flex;
+    &__left {
+        width: 50%;
+        img {
+            width: 100%;
+        }
+    }
+    &__left-content {
+        margin: 2rem;
+    }
+
+    &__right {
+        width: 50%;
+    }
+    &__right-content {
+        margin: 1.5rem;
+    }
 }
 
 .not-found {
-    background-color: lightseagreen
 }
 
 .footer {
-    background-color: lightgoldenrodyellow;
+    color: $white;
+    background-color: $secondary-light;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &__navlink {
+        color: $white;
+        text-transform: none;
+        transition: 200ms;
+
+        &:hover {
+            color: $hover-text;
+        }
+
+        &:active {
+            color: $active-text;
+        }
+    }
+
+    svg {
+        width: 2rem;
+        margin: .5rem;
+    }
 }

@@ -8,7 +8,7 @@ function Header({}) {
 
     return (
         <div className="header">
-            Welcome to my website!
+            mox's silly pet game
         </div>
     );
 }

@@ -1,4 +1,6 @@
 @import "./styles/main.scss";
+@import url('https://fonts.googleapis.com/css?family=Rubik+Bubbles');
+@import url('https://fonts.googleapis.com/css?family=Dhurjati');
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

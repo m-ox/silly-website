@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import useSound from 'use-sound';
+import clickSfx from '../assets/sounds/selection.wav'
 
 function Navbar({currentPage, setPage}) {
     const [list, setList] = useState([])
-    const navigate = useNavigate();
+    const clickSound = new Audio(clickSfx);
 
     useEffect(() => {
         setList(generateList())
     }, []);
 
-    const navigatePage = (page) => {
-        setPage(page)
-        if (page === 'home') {
-            navigate('/')
-        } else {
-            navigate(`/${page}`)
-        }
+    const onClick = () => {
+        clickSound.play();
     }
     
     const activeStyles = {fontWeight: '900' };
@@ -24,14 +21,15 @@ function Navbar({currentPage, setPage}) {
         .map(page => {
             const active = currentPage === page && activeStyles;
             return (
-                <a
+                <Link
                     key={page}
                     className="navbar__navlink"
                     style={active ? activeStyles:{}}
-                    onClick={() => navigatePage(page)}
+                    onClick={() => onClick()}
+                    to={`/${page !== 'home'? page:''}`}
                 >
                     {page}
-                </a>
+                </Link>
             )
         })
 

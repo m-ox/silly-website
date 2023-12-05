@@ -43,6 +43,8 @@ function PetGame({}) {
             unitInitUpdateObj.color = kirbyUnit.color;
         }
         setUnit(unitInitUpdateObj);
+        console.log('beachimg:', beachImg
+        )
         setBackground(beachImg);
     }, []);
 

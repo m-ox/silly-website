@@ -36,6 +36,7 @@ $secondary-lighter: #C2C4B6;
     &__container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        padding: .5rem;
 
         div {
             display: flex;

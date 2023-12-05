@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import beachImg from '../assets/backgrounds/beach.jpg';
 import kirbyUnit from '../assets/units/Kirby';
 import { setStyle } from '../utils/helper';
 
@@ -18,6 +19,7 @@ function PetGame({}) {
 
     useEffect(() => {
         const unitInitUpdateObj = structuredClone(unitInit);
+        // holy shit you know this is bad what are you doing lmao
         if (kirbyUnit.name) {
             unitInitUpdateObj.name = kirbyUnit.name;
         }
@@ -44,7 +46,10 @@ function PetGame({}) {
                 <p>Hunger: <span className={`pet-game__stats-value--${hungerLevel}`}>{unit.hunger}</span></p>
                 <p>Monee: <span className="pet-game__stats-value">{unit.monee}p</span></p>
             </div>
-            <div className="pet-game__container">
+            <div
+                className="pet-game__container"
+                style={{ backgroundImage: beachImg }}
+            >
                 <img
                     className={`pet-game__${unit.name.toLowerCase()}`}
                     src={window.location.origin + unit.pic}
@@ -53,6 +58,7 @@ function PetGame({}) {
             </div>
             <div className="pet-game__messages">
                 <p>Your pet is hungry!</p>
+                <p>What will you do?</p>
             </div>
         </div>
     );

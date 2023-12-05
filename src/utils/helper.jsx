@@ -1,0 +1,1 @@
+export const setStyle = (value, styles) => value ? styles:{};

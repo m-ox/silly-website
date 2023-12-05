@@ -21,12 +21,14 @@ function PetGame({}) {
         color: ''
     }
 
+    // todo: break these out into their own functionality
     const [message, setMessage] = useState('');
     const [location, setLocation] = useState(8);
     const [background, setBackground] = useState('');
     const [unit, setUnit] = useState(unitInit);
     const [hungerLevel, setHungerLevel] = useState('excellent');
 
+    // todo: expand on this weird idea I have to inject dynamic styles?
     const statStyles = {backgroundColor: unit.color };
     const unitImgElement = (<img
             className={`pet-game__${unit.name.toLowerCase()}`}
@@ -37,13 +39,10 @@ function PetGame({}) {
         <p>Your pet is hungry!</p>
         <p>What will you do?</p>
     </>)
-
-    const feeding = () => {
-        setMessage(<>
-            <p>Okay!</p>
-            <p>Time to eat!</p>
-        </>)
-    }
+    const feeding = (() =>setMessage(<>
+        <p>Okay!</p>
+        <p>Time to eat!</p>
+    </>))
 
     useEffect(() => {
         const unitInitUpdateObj = structuredClone(unitInit);
@@ -68,6 +67,7 @@ function PetGame({}) {
         setBackground(beachImg);
     }, []);
 
+    // todo: could honestly break up this into three parts
     return (
         <div className="pet-game">
             <div className="pet-game__stats" style={setStyle(unit.color, statStyles)}>

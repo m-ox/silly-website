@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import clickSfx from '../assets/sounds/selection.wav'
+import clickSfx from '../assets/sounds/selection.wav';
 
 function Navbar({currentPage, setPage}) {
     const [list, setList] = useState([])

@@ -12,10 +12,17 @@ function PetGame({}) {
         pic: undefined,
         color: ''
     }
-    const [location, setLocation] = useState(1);
+    const [location, setLocation] = useState(8);
+    const [background, setBackground] = useState('');
     const [unit, setUnit] = useState(unitInit);
     const [hungerLevel, setHungerLevel] = useState('excellent');
     const statStyles = {backgroundColor: unit.color };
+
+    const unitImgElement = (<img
+            className={`pet-game__${unit.name.toLowerCase()}`}
+            src={window.location.origin + unit.pic}
+            alt={unit.name.toLowerCase()}
+        />)
 
     useEffect(() => {
         const unitInitUpdateObj = structuredClone(unitInit);
@@ -36,6 +43,7 @@ function PetGame({}) {
             unitInitUpdateObj.color = kirbyUnit.color;
         }
         setUnit(unitInitUpdateObj);
+        setBackground(beachImg);
     }, []);
 
     return (
@@ -48,13 +56,17 @@ function PetGame({}) {
             </div>
             <div
                 className="pet-game__container"
-                style={{ backgroundImage: beachImg }}
+                style={{ backgroundImage: `url(${background})` }}
             >
-                <img
-                    className={`pet-game__${unit.name.toLowerCase()}`}
-                    src={window.location.origin + unit.pic}
-                    alt={unit.name.toLowerCase()}
-                />
+                <div>{location === 1 && unitImgElement}</div>
+                <div>{location === 2 && unitImgElement}</div>
+                <div>{location === 3 && unitImgElement}</div>
+                <div>{location === 4 && unitImgElement}</div>
+                <div>{location === 5 && unitImgElement}</div>
+                <div>{location === 6 && unitImgElement}</div>
+                <div>{location === 7 && unitImgElement}</div>
+                <div>{location === 8 && unitImgElement}</div>
+                <div>{location === 9 && unitImgElement}</div>
             </div>
             <div className="pet-game__messages">
                 <p>Your pet is hungry!</p>
